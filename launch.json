@@ -1,0 +1,47 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    // ref: https://vscode-doc-jp.github.io/docs/userguide/debugging.html
+    // ref: https://vscode-doc-jp.github.io/docs/userguide/tasks.html
+    // 参考 : https://qiita.com/keita1987/items/f01cf9f307fedfca00c6
+    // 参考 : http://www.atmarkit.co.jp/ait/articles/1708/04/news027.html
+    {
+      "name": "Etl.Identify.Functions",
+      "type": "clr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "program": "${env:AppData}/npm/node_modules/azure-functions-core-tools/bin/func.exe",
+      "args": [
+        "host",
+        "start"
+      ],
+      "cwd": "${workspaceFolder}/Etl.Identify.Functions/bin/Debug/net47",
+      "stopAtEntry": false,
+      "console": "integratedTerminal",
+      "justMyCode": false,
+      "requireExactSource": true,
+      "sourceFileMap": {
+        "${workspaceFolder}": "${workspaceFolder}/Etl.Identify.Functions/bin/Debug/net47"
+      }
+    },
+    {
+      "name": "Etl.Load.Functions",
+      "type": "clr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "program": "${env:AppData}/npm/node_modules/azure-functions-core-tools/bin/func.exe",
+      "args": [
+        "host",
+        "start"
+      ],
+      "cwd": "${workspaceFolder}/Etl.Load.Functions/bin/Debug/net47",
+      "stopAtEntry": false,
+      "console": "internalConsole",
+      "justMyCode": false,
+      "requireExactSource": true,
+      "sourceFileMap": {
+        "${workspaceFolder}": "${workspaceFolder}/Etl.Load.Functions/bin/Debug/net47"
+      }
+    }
+  ]
+}
